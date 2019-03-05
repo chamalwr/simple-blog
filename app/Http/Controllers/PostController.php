@@ -10,9 +10,8 @@ use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
 
-    public function index()
-    {
-        //
+    public function index() {
+
     }
 
 
@@ -44,26 +43,11 @@ class PostController extends Controller
     }
 
 
-    public function show($id)
-    {
-        //
-    }
+    public function show($id) { }
 
+    public function edit($id) { }
 
-    public function edit($id)
-    {
-        //
-    }
+    public function update(Request $request, $id) { }
 
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-
-    public function destroy($id)
-    {
-        //
-    }
+    public function destroy($id) { }
 }

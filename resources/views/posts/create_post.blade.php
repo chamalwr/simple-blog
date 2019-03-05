@@ -17,7 +17,7 @@
 
     <div class="panel panel-default">
 
-        <div class="panel-heading">
+        <div class="text-center panel-heading">
             Create a New Post!
         </div>
 
@@ -35,7 +35,7 @@
 
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea class="form-control" name="postDescription" cols="10" rows="10" placeholder="Share your thoughts!"></textarea>
+                    <textarea class="form-control" name="postDescription" cols="6" rows="6" placeholder="Share your thoughts!"></textarea>
                 </div>
 
                 <div class="form-group">
