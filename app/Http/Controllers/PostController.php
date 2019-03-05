@@ -35,11 +35,8 @@ class PostController extends Controller
             'created_by' => $currentUsr->name
         ]);
 
-        Session::flash('success', 'Posted Successfully!');
+        Session::flash('success', 'Post Published Successfully!');
         return redirect()->back();
-//        return view('posts.create_post');
-//        dd($request->all());
-//        dd($currentUsr->name);
 
     }
 

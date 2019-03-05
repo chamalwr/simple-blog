@@ -10,7 +10,7 @@
                             <h5 class="card-title">{{$post->title}}</h5>
                             <h5 class="card-title"> Author: <b><i>{{$post->created_by}}</i></b></h5>
                             <p class="card-text">{{$post->description}}</p>
-                            <a href="#" class="btn btn-primary">Read Full!</a>
+                            <a href="#" class="btn btn-primary">Read More..</a>
                         </div>
                     </div>
                     <br/>

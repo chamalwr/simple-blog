@@ -42,9 +42,11 @@ Route::group(['prefix' => 'author', 'middleware' => 'auth'], function(){
        'as' => 'post.delete'
     ]);
 
+    Route::get('/viewposts', [
+        'uses' => 'PostController@showAll',
+        'as' => 'post.showAll'
+    ]);
+
 });
 
-Route::get('/viewposts', [
-    'uses' => 'PostController@showAll',
-    'as' => 'post.showAll'
-]);
+
