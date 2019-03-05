@@ -31,6 +31,20 @@ Route::group(['prefix' => 'author', 'middleware' => 'auth'], function(){
         'as' => 'post.save'
     ]);
 
+
+    Route::get('post/articles/my', [
+       'uses' => 'PostController@showMine',
+       'as' => 'post.showMine'
+    ]);
+
+    Route::get('/post/delete/{id}', [
+       'uses' => 'PostController@destroy',
+       'as' => 'post.delete'
+    ]);
+
 });
 
-
+Route::get('/viewposts', [
+    'uses' => 'PostController@showAll',
+    'as' => 'post.showAll'
+]);

@@ -36,12 +36,21 @@ class PostController extends Controller
         ]);
 
         Session::flash('success', 'Posted Successfully!');
-        return view('posts.create_post');
+        return redirect()->back();
+//        return view('posts.create_post');
 //        dd($request->all());
 //        dd($currentUsr->name);
 
     }
 
+    public function showAll(){
+
+        return view('posts.viewposts')->with('posts', Post::all());
+    }
+
+    public function showMine(){
+        return view('posts.myposts')->with('posts',Post::all());
+    }
 
     public function show($id) { }
 
@@ -49,5 +58,11 @@ class PostController extends Controller
 
     public function update(Request $request, $id) { }
 
-    public function destroy($id) { }
+    public function destroy($id) {
+        $post = Post::find($id);
+        $post->delete();
+
+        Session::flash("success", "Post Deleted Successfully!");
+        return redirect()->back();
+    }
 }
