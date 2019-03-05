@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -21,7 +24,23 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->all());
+        $this->validate($request, [
+            'postTitle' => 'required|max:200',
+            'postDescription' => 'required'
+        ]);
+        $currentUsr = Auth::user();
+
+        $post = Post::create([
+            'title' => $request->postTitle,
+            'description' => $request->postDescription,
+            'created_by' => $currentUsr->name
+        ]);
+
+        Session::flash('success', 'Posted Successfully!');
+        return view('posts.create_post');
+//        dd($request->all());
+//        dd($currentUsr->name);
+
     }
 
 
